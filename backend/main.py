@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-import backend.src.config.env_config as env
+from src.config import env_config as env
 
 app = FastAPI( title=env.NAME, version=env.VERSION, description=env.DESCRIPTION )
 
