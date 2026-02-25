@@ -1,6 +1,7 @@
 import threading
 from concurrent.futures import ThreadPoolExecutor
 from src.config import config as env
+from src.core.exceptions import APIError
 
 _executor = None
 _lock = threading.Lock()
@@ -13,7 +14,8 @@ def obter_executor() -> ThreadPoolExecutor:
 
         if _executor is None:
 
-            _executor = ThreadPoolExecutor(max_workers=env.THREADS)
+            try: _executor = ThreadPoolExecutor(max_workers=env.THREADS)
+            except Exception as e: raise APIError(f"Erro ao criar pool de threads: {str(e)}") from e
 
         return _executor
     

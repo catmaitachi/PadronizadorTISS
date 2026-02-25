@@ -3,6 +3,7 @@ from google import genai
 from abc import ABC, abstractmethod
 from src.config import config as env
 from src.core.executor import obter_executor
+from src.core.exceptions import AIError
 
 class GeminiService(ABC):
 
@@ -58,8 +59,10 @@ class PDFService(GeminiService, FileProcessingInterface):
 
             )
 
+            if not resposta or not resposta.text: raise AIError("Resposta vazia do Gemini")
+
             return resposta.text
 
-        except Exception as e: raise
+        except Exception as e: raise AIError(f"Gemini retornou um erro: {str(e)}") from e
 
     async def criar_xml( self, conteudo: bytes ) -> bytes: pass
