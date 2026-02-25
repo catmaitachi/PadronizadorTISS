@@ -8,7 +8,22 @@ const DarkModeSwitch = () => {
     return (
         <button 
         onClick={setDarkMode}
-        className=""></button>
+        className=" relative inline-flex h-8 w-13 items-center rounded-full 
+        transition-colors focus:outline-none 
+        bg-slate-950 dark:bg-gray-300 text-white dark:text-slate-950"
+        aria-label="Switch responsável por trocar o modo escuro">
+
+            <span>
+                className={`${
+                darkMode ? 'translate-x-7 bg-slate-950' : 'translate-x-1 bg-gray-300'
+        }       flex h-6 w-6 transform items-center justify-center rounded-full transition-transform duration-300 ease-in-out shadow-sm`}
+            </span>
+            {darkMode ? (
+          <span className="text-xs">🌙</span>
+        ) : (
+          <span className="text-xs">☀️</span>
+        )}
+        </button>
     )
 
 }
