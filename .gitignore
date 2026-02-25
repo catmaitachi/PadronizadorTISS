@@ -233,3 +233,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Storybook
+/storybook-static
+.vercel # Caso o Storybook use algum deploy temporário
+*storybook.log
