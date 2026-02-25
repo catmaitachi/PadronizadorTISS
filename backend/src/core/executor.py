@@ -1,5 +1,6 @@
-import threading
 from concurrent.futures import ThreadPoolExecutor
+import threading
+
 from src.config import config as env
 from src.core.exceptions import APIError
 

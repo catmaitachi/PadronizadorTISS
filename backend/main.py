@@ -1,5 +1,7 @@
-from fastapi import FastAPI
 from contextlib import asynccontextmanager
+
+from fastapi import FastAPI
+
 from src.config import config as env
 from src.core import executor as exec
 from src.routes import route
@@ -21,4 +23,4 @@ if __name__ == "__main__":
     
     import uvicorn
 
-    uvicorn.run( app, host=env.HOST, port=env.PORT, reload=env.RELOAD )
+    uvicorn.run( "main:app", host=env.HOST, port=env.PORT, reload=env.RELOAD )
