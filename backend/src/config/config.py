@@ -9,8 +9,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # Gemini API
 
 GEMINI_KEY = os.getenv("GEMINI_API_KEY")
-GEMINI_SECRET = os.getenv("GEMINI_API_SECRET")
-PROMPT = os.getenv("PROMPT_SUPER_SECRETO")
+
+# Prompts
+
+PDF_PROMPT = os.getenv("PDF_PROMPT")
 
 # Detalhes do Projeto
 
@@ -23,3 +25,4 @@ DESCRIPTION = os.getenv("DESCRIPTION")
 HOST = os.getenv("HOST", "0.0.0.0")
 PORT = int(os.getenv("PORT", 8000))
 RELOAD = os.getenv("RELOAD", "True").lower() == "true"
+THREADS = int(os.getenv("THREADS", 10))

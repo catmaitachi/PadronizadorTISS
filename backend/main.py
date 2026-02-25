@@ -1,7 +1,21 @@
 from fastapi import FastAPI
-from src.config import env_config as env
+from contextlib import asynccontextmanager
+from src.config import config as env
+from src.core import executor as exec
+from src.routes import route
 
-app = FastAPI( title=env.NAME, version=env.VERSION, description=env.DESCRIPTION )
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+
+    # * Se precisar montar algo antes de iniciar o servidor, faça aqui
+
+    yield
+
+    exec.desligar_executor()
+
+app = FastAPI( title=env.NAME, version=env.VERSION, description=env.DESCRIPTION, lifespan=lifespan )
+
+app.include_router( route.router )
 
 if __name__ == "__main__":
     
