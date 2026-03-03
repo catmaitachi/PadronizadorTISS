@@ -1,1 +1,2 @@
-export { default as darkModeSwitch } from './DarkModeSwitch';
+export { default as DarkModeSwitch } from './DarkModeSwitch';
+export { default as Header } from './Header';
