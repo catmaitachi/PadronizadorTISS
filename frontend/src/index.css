@@ -11,3 +11,9 @@
 body {
   @apply bg-white dark:bg-slate-900;
 }
+
+.low-graphs * {
+    transition-property: none !important;
+    transform: none !important;
+    animation: none !important;
+}
