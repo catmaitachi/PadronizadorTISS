@@ -1,4 +1,4 @@
-import { DarkModeSwitch } from '@components';
+import { DarkModeSwitch, LowGraphsSwitch } from '@components';
 
 const Header = () => {
 
@@ -9,6 +9,7 @@ const Header = () => {
         border-b-2 shadow-black/20 dark:shadow-slate-950/20 shadow-md">
             <h1 className="text-xl font-bold font-serif">Padronizador TISS</h1>
             <DarkModeSwitch />
+            <LowGraphsSwitch />
         </header>
     )
 
