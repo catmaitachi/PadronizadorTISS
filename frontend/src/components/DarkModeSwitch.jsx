@@ -15,7 +15,7 @@ const DarkModeSwitch = () => {
 
             <span
                 className={`${
-                darkMode ? 'translate-x-12 bg-slate-950' : 'translate-x-2 bg-gray-300'
+                darkMode ? 'translate-x-12 bg-slate-900' : 'translate-x-2 bg-gray-300'
         }       flex h-6 w-6 transform items-center justify-center rounded-full transition-transform duration-300 ease-in-out shadow-sm`}>
             </span>
             {darkMode ? (
