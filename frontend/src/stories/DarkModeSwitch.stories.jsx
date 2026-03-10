@@ -1,4 +1,4 @@
-import DarkModeSwitch from './DarkModeSwitch';
+import { DarkModeSwitch } from '@components';
 
 export default {
   title: 'Componentes/DarkModeSwitch',
